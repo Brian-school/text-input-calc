@@ -23,7 +23,6 @@ public class calc {
         String operation = "";
         while (!operationValid){
             operation = scanner.nextLine();
-            scanner.nextLine(); // clear carriage return
 
             if (Objects.equals(operation, "add") || Objects.equals(operation, "sub") ||
                     Objects.equals(operation, "mult") || Objects.equals(operation, "div")) {
@@ -32,9 +31,16 @@ public class calc {
               println("Invalid input. Valid options are \"add\" \"sub\" \"mult\" \"div\"");
             }
         }
-
+        int result = 0;
         if (operation.equals("add")) {
-
+            result = num1 + num2;
+        } else if (operation.equals("sub")) {
+            result = num1 - num2;
+        } else if (operation.equals("mult")) {
+            result = num1 * num2;
+        } else if (operation.equals("div")) {
+            result = num1 / num2;
         }
+        println("Result: " + result);
     }
 }
